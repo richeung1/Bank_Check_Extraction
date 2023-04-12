@@ -6,7 +6,7 @@ import os
 
 
 # Getting image path
-image_path = "dummycheck1.JPG"
+image_path = 'dummycheck1.JPG'
 
 
 # Creating directory to store updated images
@@ -14,6 +14,8 @@ os.makedirs("detected_objects", exist_ok=True)
 image_result = "detected_objects/" + image_path[:-4] + "_result.JPG"
 image_result_final = image_result[:-4] + "_final.JPG"
 
+
+print(image_result)
 
 # Loading custom trained model
 detector = CustomObjectDetection()

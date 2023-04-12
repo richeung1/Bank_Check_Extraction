@@ -44,7 +44,8 @@ def process_image(image):
     return generated_text
 
 
-image = Image.open(r'C:\Users\Ricky\Desktop\Capstone-Project-OCR Part\Images\handwriting.JPG')
+image_path = 'handwriting.JPG'
+image = Image.open(image_path)
 image.show()
 
 print(process_image(image))
