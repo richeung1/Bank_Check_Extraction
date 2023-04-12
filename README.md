@@ -22,8 +22,9 @@
 
 ### *Next steps:*
 1. Create a pipeline to link the Extraction_Script and OCR_Script together
-2. Save the results (digitized and/or handwritten text) as a CSV, JSON, or other appropriate file
-3. Export this file and use to upload into a database or into relevant bookkeeping software
+2. Save the results as a CSV, JSON, or other appropriate file for uploading into a database or bookkeeping software
+3. Create a User Interface for this pipeline
+4. Figure out appropriate method of deployment so end-users can benefit from this program
 
 
 ### *Other continuous steps:*
