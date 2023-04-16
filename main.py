@@ -1,12 +1,6 @@
-# Installing dependencies
-from imageai.Detection.Custom import CustomObjectDetection
-from PIL import Image
-import cv2
-import os
-import torch
-from transformers import TrOCRProcessor
-from transformers import VisionEncoderDecoderModel
 import Extraction_Script as Predict
+import OCR_Script as something
+import os
 
 # Getting image path
 image_path = 'dummycheck1.JPG'
