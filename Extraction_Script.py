@@ -1,16 +1,11 @@
 # Installing dependencies
 from imageai.Detection.Custom import CustomObjectDetection
-from PIL import Image
 import cv2
 import os
 
 
-# # Getting image path
-image_path = 'dummycheck1.JPG'
-
-
 class Extraction:
-    def results(self):
+    def results(self, image_path):
 
         # Creating directory to store updated images
         os.makedirs("detected_objects", exist_ok=True)
