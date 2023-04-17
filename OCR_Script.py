@@ -1,11 +1,10 @@
 # Installling dependencies
-from PIL import Image
 import torch
 from transformers import TrOCRProcessor
 from transformers import VisionEncoderDecoderModel
 
 
-class OCR:
+class loadmodel:
 
     # Function to take in an image and return generated text
     def __init__(self):
@@ -31,25 +30,21 @@ class OCR:
         self.model.config.length_penalty = 2.0
         self.model.config.num_beams = 4
 
-    
+
+class OCR:
+    # Inherit loadmodel class
+    def __init__(self, loadmodel):
+        self.loadmodel = loadmodel
+
     def process_image(self, image):
         # prepare image
-        pixel_values = self.processor(image, return_tensors="pt").pixel_values
+        pixel_values = self.loadmodel.processor(image, return_tensors="pt").pixel_values
 
         # generate (no beam search)
-        generated_ids = self.model.generate(pixel_values.to(self.device))
+        generated_ids = self.loadmodel.model.generate(pixel_values.to(self.loadmodel.device))
 
         # decode
         generated_ids_tensor = generated_ids[0]
-        generated_text = self.processor.decode(generated_ids_tensor, skip_special_tokens=True)
+        generated_text = self.loadmodel.processor.decode(generated_ids_tensor, skip_special_tokens=True)
 
         return generated_text
-
-
-image_path = 'handwriting.JPG'
-img = Image.open(image_path)
-img.show()
-
-load_model = OCR()
-prediction_text= load_model.process_image(image = img)
-print(prediction_text)
