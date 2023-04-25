@@ -9,6 +9,7 @@ class Extraction:
 
         # Creating directory to store updated images
         os.makedirs("detected_objects", exist_ok=True)
+        print("detected_objects folder has been created")
         image_result = "detected_objects/" + image_path[:-4] + "_result.JPG"
         image_result_final = image_result[:-4] + "_final.JPG"
 
@@ -53,3 +54,5 @@ class Extraction:
             object_img = image[y1:y2, x1:x2]
             object_filename = f"detected_objects/{label}_{score:.2f}.jpg"
             cv2.imwrite(object_filename, object_img)
+        
+        print('Objects have been extracted')
