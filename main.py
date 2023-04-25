@@ -2,6 +2,7 @@ from Extraction_Script import Extraction
 import OCR_Script as text
 import os
 from PIL import Image
+from tqdm import tqdm
 
 
 # Getting image path and running Extraction_Script's custom-trained Yolov3 model to extract classes/objects into a folder named 'detected_objects'
@@ -27,7 +28,7 @@ print(Images_for_OCR)
 # Getting text results for the 4 images from OCR_Script's TrOCR-handwritten-large model
 model = text.loadmodel()
 results = []
-for i in Images_for_OCR:
+for i in tqdm(Images_for_OCR):
     image_path = ('detected_objects/' + i)
     img = Image.open(image_path)
     img.show()
@@ -36,4 +37,5 @@ for i in Images_for_OCR:
     prediction_text= ocr.process_image(image = img)
     results.append([i, prediction_text])
 
+print('OCR Results for amount, check #, date, and payee:')
 print(results)
