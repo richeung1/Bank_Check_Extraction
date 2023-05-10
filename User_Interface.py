@@ -23,12 +23,13 @@ if uploaded_file is not None:
     image_path = tmp_file.name
     print(image_path)
 
+    # Shows uploaded image in the User Interface
     picture = Image.open(image_path)
     st.image(picture, caption='Uploaded Image.', use_column_width=True)
 
     picture.save('uploaded_check.jpg')
 
-    # Object detection time
+    # Sending uploaded image to computer vision object detection Extraction_Script.py
     extraction = Extraction()
     extraction.results('uploaded_check.jpg')
 
@@ -43,6 +44,13 @@ if uploaded_file is not None:
             Images_for_OCR.append(filename)
 
     print(Images_for_OCR)
+
+    # Shows Resulting Check Image below the original uploaded image
+    for filename in file_list:
+        if filename.endswith('final.JPG'):
+            image_path = ('detected_objects/' + filename)
+            img = Image.open(image_path)
+            st.image(img, caption=filename, use_column_width=True)
         
 
     # Getting text results for the 4 images from OCR_Script's TrOCR-handwritten-large model
