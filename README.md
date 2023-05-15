@@ -2,9 +2,9 @@
 
 ## The goal of this is to make bookkeeping more efficient by automating the data validation and data entry of bank checks.
 
-### This is a minimum viable product. User_Interface.py is the main file to run.
-
 ---
+
+### This is a minimum viable product. User_Interface.py is the main file to run.
 
 ***User-Interface.py*** does the following:
 1. User can upload an image of a check
@@ -26,6 +26,7 @@
 6. Prints a dataframe in the browser showing the images' names and the OCR text results
 7. Allows user the option to download the dataframe as a CSV
 
+---
 
 ### *Other continuous steps:*
 1. Finetune Yolov3 model for Extraction_Script to improve detection for the 4 objects: check number, date, payee, and amount
