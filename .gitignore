@@ -2,3 +2,4 @@ __pycache__
 *.ipynb
 private_images
 *.pth
+uploaded_check.jpg
