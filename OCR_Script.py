@@ -13,6 +13,8 @@ class loadmodel:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.processor = TrOCRProcessor.from_pretrained("microsoft/trocr-large-handwritten")
         self.model = VisionEncoderDecoderModel.from_pretrained("microsoft/trocr-large-handwritten")
+        self.model.load_state_dict(torch.load('model\TrOCR_Bank_Check_Extraction_0.21221186534833886.pth'))
+
         self.model.to(self.device)
 
         # set special tokens used for creating the decoder_input_ids from the labels
