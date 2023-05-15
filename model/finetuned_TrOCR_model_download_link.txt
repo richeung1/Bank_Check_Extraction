@@ -1,0 +1,1 @@
+https://storage.googleapis.com/finetuned-trocr-model/TrOCR_Bank_Check_Extraction_0.21221186534833886.pth
