@@ -40,7 +40,7 @@ class Extraction:
         image = cv2.imread(image_path)
         for i in indices.flatten():
             x1, y1, x2, y2 = boxes[i]
-            cv2.rectangle(image, (x1, y1), (x2, y2), (255, 0, 0), 2)
+            cv2.rectangle(image, (x1, y1), (x2, y2), (255, 0, 0), 1)
             cv2.putText(image, labels[i] + " : " + str(scores[i]), (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
 
         # Saving a new image with the new bounding boxes
