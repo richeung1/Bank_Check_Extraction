@@ -4,7 +4,9 @@
 
 ### This is a minimum viable product. User_Interface.py is the main file to run.
 
-***User-Interface.py does the following:***
+---
+
+***User-Interface.py*** does the following:
 1. User can upload an image of a check
 2. Shows the check image in the browser
 3. Runs the ***Extraction_Script.py*** on the check image
