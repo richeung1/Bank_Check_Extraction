@@ -70,14 +70,17 @@ if uploaded_file is not None:
 
 
 
-    # Download file button
+    # Show results in a dataframe
     df = pd.DataFrame(results, columns = ['Object', 'Text'])
     csv = df.to_csv(index = False)
-    b64 = base64.b64encode(csv.encode()).decode()
     st.write('OCR Results for amount, check #, date, and payee.')
-    link = f'<a href="data:file/csv;base64,{b64}" download="results.csv">Download results as CSV file!</a>'
-    st.markdown(link, unsafe_allow_html=True)
     st.write(df)
+
+    # Download file button
+    b64 = base64.b64encode(csv.encode()).decode()
+    link = f'<a href="data:file/csv;base64,{b64}" download="results.csv"><button>Download results as CSV file!</button></a>'
+    st.markdown(link, unsafe_allow_html=True)
+    
 
 
 
